@@ -22,7 +22,8 @@ namespace gameCollectionManager
         public Form1()
         {
             InitializeComponent();
-         //   genereCombo.Items = Gener;
+            genereCombo.DataSource = Enum.GetValues(typeof(Gener));
+            platformCombo.DataSource = Enum.GetValues(typeof(platForm));
             releaseYear.Maximum = DateTime.Now.Year;
             games = JsonService.Load();
             dataGrid();
@@ -32,8 +33,8 @@ namespace gameCollectionManager
         {
             Game game = new Game();
             game.Name = GameNameTXT.Text;
-            game.gener = genereCombo.Text;
-            game.platform = platformCombo.Text;
+            game.gener = (Gener)genereCombo.SelectedItem;
+            game.platform = (platForm)platformCombo.SelectedItem;
             game.releaseYear = (int)releaseYear.Value;
             game.rating = (int)rating.Value;
             game.installed = installCheck.Checked;
@@ -61,8 +62,8 @@ namespace gameCollectionManager
             {
                 selectindex = e.RowIndex;
                 GameNameTXT.Text = games[selectindex].Name;
-                genereCombo.Text = games[selectindex].gener;
-                platformCombo.Text = games[selectindex].platform;
+                genereCombo.SelectedItem = games[selectindex].gener;
+                platformCombo.SelectedItem = games[selectindex].platform;
                 releaseYear.Value = games[selectindex].releaseYear;
                 rating.Value = games[selectindex].rating;
                 installCheck.Checked = games[selectindex].installed;
@@ -74,8 +75,8 @@ namespace gameCollectionManager
             if (selectindex!=-1)
             {
                 games[selectindex].Name = GameNameTXT.Text;
-                games[selectindex].gener = genereCombo.Text;
-                games[selectindex].platform = platformCombo.Text;
+                games[selectindex].gener = (Gener)genereCombo.SelectedItem;
+                games[selectindex].platform = (platForm)platformCombo.SelectedItem;
                 games[selectindex].releaseYear = (int)releaseYear.Value;
                 games[selectindex].rating = (int)rating.Value;
                 games[selectindex].installed = installCheck.Checked;
@@ -88,8 +89,8 @@ namespace gameCollectionManager
     public class Game
     {
         public string Name { get; set; }
-        public string gener { get; set; }
-        public string platform { get; set; }
+        public Gener gener { get; set; }
+        public platForm platform { get; set; }
         public int releaseYear { get; set; }
         public int rating { get; set; }
         public bool installed { get; set; }
@@ -107,6 +108,15 @@ namespace gameCollectionManager
         BattleRoyale,
         puzzle,
         Rhythm
+    }
+
+    public enum platForm
+    {
+        PC,
+        PlayStation,
+        Xbox,
+        NintendoSwitch,
+        Mobile
     }
 
 
