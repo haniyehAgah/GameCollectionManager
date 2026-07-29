@@ -106,7 +106,7 @@
             // 
             // deletebtn
             // 
-            this.deletebtn.Location = new System.Drawing.Point(975, 193);
+            this.deletebtn.Location = new System.Drawing.Point(973, 267);
             this.deletebtn.Name = "deletebtn";
             this.deletebtn.Size = new System.Drawing.Size(97, 37);
             this.deletebtn.TabIndex = 8;
@@ -162,7 +162,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(334, 26);
+            this.dataGridView1.Location = new System.Drawing.Point(332, 69);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -172,7 +172,7 @@
             // 
             // updatebtn
             // 
-            this.updatebtn.Location = new System.Drawing.Point(832, 193);
+            this.updatebtn.Location = new System.Drawing.Point(830, 267);
             this.updatebtn.Name = "updatebtn";
             this.updatebtn.Size = new System.Drawing.Size(101, 37);
             this.updatebtn.TabIndex = 15;
