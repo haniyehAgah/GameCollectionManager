@@ -43,9 +43,22 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.updatebtn = new System.Windows.Forms.Button();
             this.releaseYear = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.searchTXT = new System.Windows.Forms.TextBox();
+            this.genreFilterCombo = new System.Windows.Forms.ComboBox();
+            this.sortCombo = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Statistics = new System.Windows.Forms.GroupBox();
+            this.newestLbl = new System.Windows.Forms.Label();
+            this.averegeLbl = new System.Windows.Forms.Label();
+            this.installedLbl = new System.Windows.Forms.Label();
+            this.tatalLbl = new System.Windows.Forms.Label();
+            this.favoriteCheck = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.rating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.releaseYear)).BeginInit();
+            this.Statistics.SuspendLayout();
             this.SuspendLayout();
             // 
             // genereCombo
@@ -75,7 +88,7 @@
             // installCheck
             // 
             this.installCheck.AutoSize = true;
-            this.installCheck.Location = new System.Drawing.Point(120, 232);
+            this.installCheck.Location = new System.Drawing.Point(120, 226);
             this.installCheck.Name = "installCheck";
             this.installCheck.Size = new System.Drawing.Size(82, 21);
             this.installCheck.TabIndex = 4;
@@ -96,7 +109,7 @@
             // 
             // addbtn
             // 
-            this.addbtn.Location = new System.Drawing.Point(121, 276);
+            this.addbtn.Location = new System.Drawing.Point(120, 308);
             this.addbtn.Name = "addbtn";
             this.addbtn.Size = new System.Drawing.Size(119, 28);
             this.addbtn.TabIndex = 6;
@@ -106,7 +119,7 @@
             // 
             // deletebtn
             // 
-            this.deletebtn.Location = new System.Drawing.Point(973, 267);
+            this.deletebtn.Location = new System.Drawing.Point(973, 236);
             this.deletebtn.Name = "deletebtn";
             this.deletebtn.Size = new System.Drawing.Size(97, 37);
             this.deletebtn.TabIndex = 8;
@@ -172,7 +185,7 @@
             // 
             // updatebtn
             // 
-            this.updatebtn.Location = new System.Drawing.Point(830, 267);
+            this.updatebtn.Location = new System.Drawing.Point(835, 236);
             this.updatebtn.Name = "updatebtn";
             this.updatebtn.Size = new System.Drawing.Size(101, 37);
             this.updatebtn.TabIndex = 15;
@@ -203,11 +216,131 @@
             0,
             0});
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(897, 42);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 17);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Filter";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(333, 43);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 17);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Search Game";
+            // 
+            // searchTXT
+            // 
+            this.searchTXT.Location = new System.Drawing.Point(434, 42);
+            this.searchTXT.Multiline = true;
+            this.searchTXT.Name = "searchTXT";
+            this.searchTXT.Size = new System.Drawing.Size(120, 22);
+            this.searchTXT.TabIndex = 21;
+            this.searchTXT.TextChanged += new System.EventHandler(this.SearchTXT_TextChanged);
+            // 
+            // genreFilterCombo
+            // 
+            this.genreFilterCombo.FormattingEnabled = true;
+            this.genreFilterCombo.Location = new System.Drawing.Point(942, 40);
+            this.genreFilterCombo.Name = "genreFilterCombo";
+            this.genreFilterCombo.Size = new System.Drawing.Size(121, 24);
+            this.genreFilterCombo.TabIndex = 24;
+            this.genreFilterCombo.SelectedIndexChanged += new System.EventHandler(this.GenreFilterCombo_SelectedIndexChanged);
+            // 
+            // sortCombo
+            // 
+            this.sortCombo.FormattingEnabled = true;
+            this.sortCombo.Location = new System.Drawing.Point(434, 12);
+            this.sortCombo.Name = "sortCombo";
+            this.sortCombo.Size = new System.Drawing.Size(121, 24);
+            this.sortCombo.TabIndex = 25;
+            this.sortCombo.SelectedIndexChanged += new System.EventHandler(this.SortCombo_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(333, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 17);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Sort by";
+            // 
+            // Statistics
+            // 
+            this.Statistics.Controls.Add(this.newestLbl);
+            this.Statistics.Controls.Add(this.averegeLbl);
+            this.Statistics.Controls.Add(this.installedLbl);
+            this.Statistics.Controls.Add(this.tatalLbl);
+            this.Statistics.Location = new System.Drawing.Point(15, 344);
+            this.Statistics.Name = "Statistics";
+            this.Statistics.Size = new System.Drawing.Size(371, 114);
+            this.Statistics.TabIndex = 27;
+            this.Statistics.TabStop = false;
+            // 
+            // newestLbl
+            // 
+            this.newestLbl.AutoSize = true;
+            this.newestLbl.Location = new System.Drawing.Point(183, 78);
+            this.newestLbl.Name = "newestLbl";
+            this.newestLbl.Size = new System.Drawing.Size(113, 17);
+            this.newestLbl.TabIndex = 3;
+            this.newestLbl.Text = "Newest Game : -";
+            // 
+            // averegeLbl
+            // 
+            this.averegeLbl.AutoSize = true;
+            this.averegeLbl.Location = new System.Drawing.Point(25, 78);
+            this.averegeLbl.Name = "averegeLbl";
+            this.averegeLbl.Size = new System.Drawing.Size(126, 17);
+            this.averegeLbl.TabIndex = 2;
+            this.averegeLbl.Text = "Averege Rating : 0";
+            // 
+            // installedLbl
+            // 
+            this.installedLbl.AutoSize = true;
+            this.installedLbl.Location = new System.Drawing.Point(183, 31);
+            this.installedLbl.Name = "installedLbl";
+            this.installedLbl.Size = new System.Drawing.Size(80, 17);
+            this.installedLbl.TabIndex = 1;
+            this.installedLbl.Text = "Installed : 0";
+            // 
+            // tatalLbl
+            // 
+            this.tatalLbl.AutoSize = true;
+            this.tatalLbl.Location = new System.Drawing.Point(25, 31);
+            this.tatalLbl.Name = "tatalLbl";
+            this.tatalLbl.Size = new System.Drawing.Size(109, 17);
+            this.tatalLbl.TabIndex = 0;
+            this.tatalLbl.Text = "Tatal Games : 0";
+            // 
+            // favoriteCheck
+            // 
+            this.favoriteCheck.AutoSize = true;
+            this.favoriteCheck.Location = new System.Drawing.Point(120, 267);
+            this.favoriteCheck.Name = "favoriteCheck";
+            this.favoriteCheck.Size = new System.Drawing.Size(91, 21);
+            this.favoriteCheck.TabIndex = 28;
+            this.favoriteCheck.Text = "Is favorite";
+            this.favoriteCheck.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 332);
+            this.ClientSize = new System.Drawing.Size(1101, 470);
+            this.Controls.Add(this.favoriteCheck);
+            this.Controls.Add(this.Statistics);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.sortCombo);
+            this.Controls.Add(this.genreFilterCombo);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.searchTXT);
             this.Controls.Add(this.updatebtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
@@ -225,9 +358,12 @@
             this.Controls.Add(this.genereCombo);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.rating)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.releaseYear)).EndInit();
+            this.Statistics.ResumeLayout(false);
+            this.Statistics.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,6 +386,18 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button updatebtn;
         private System.Windows.Forms.NumericUpDown releaseYear;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox searchTXT;
+        private System.Windows.Forms.ComboBox genreFilterCombo;
+        private System.Windows.Forms.ComboBox sortCombo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox Statistics;
+        private System.Windows.Forms.Label newestLbl;
+        private System.Windows.Forms.Label averegeLbl;
+        private System.Windows.Forms.Label installedLbl;
+        private System.Windows.Forms.Label tatalLbl;
+        private System.Windows.Forms.CheckBox favoriteCheck;
     }
 }
 
